@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
        x:Class="undoRedo.UndoRedoPage">
@@ -12,15 +12,26 @@
       <Button x:Name="buttonYellow" Text="Yellow" Clicked="OnButtonYellowClicked"/> 
 		</StackLayout>
 		<StackLayout Orientation="Horizontal">
-			<ListView x:Name="undoLV">
-				<ListView.ItemTemplate>
-					<DataTemplate>
-						<TextCell Text="{Binding Name}" TextColor="{Binding Color}" />
-					</DataTemplate>
-				</ListView.ItemTemplate>
-			</ListView>
-			<ListView x:Name="redoLV">
-			</ListView>
+			<StackLayout>
+				<Button x:Name="btnUndo" Text="UNDO" Clicket="OnBtnUndoClicked" />
+				<ListView x:Name="undoLV">
+					<ListView.ItemTemplate>
+						<DataTemplate>
+							<TextCell Text="{Binding Name}" TextColor="{Binding Color}" />
+						</DataTemplate>
+					</ListView.ItemTemplate>
+				</ListView>
+			</StackLayout>
+			<StackLayout>
+				<Button x:Name="btnRedo" Text="REDO" Clicket="OnBtnRedoClicked" />
+				<ListView x:Name="redoLV">
+					<ListView.ItemTemplate>
+						<DataTemplate>
+							<TextCell Text="{Binding Name}" TextColor="{Binding Color}" />
+						</DataTemplate>
+					</ListView.ItemTemplate>
+				</ListView>
+			</StackLayout>
 		</StackLayout>
 	</StackLayout>
 </ContentPage>
