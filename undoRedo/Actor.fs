@@ -42,5 +42,5 @@ module ActorM =
   let postUndo () = 
     undoRedoActor.PostAndReply(fun rc -> Undo rc) 
 
-  let redoUndo () = 
+  let postRedo () = 
     undoRedoActor.PostAndReply(fun rc -> Redo rc) 

@@ -44,11 +44,11 @@ type UndoRedoPage() =
 
   member __.OnBtnUndoClicked (sender:Object) (args:EventArgs) =
     let undoColor = postUndo()
-    helloLabel.BackgroundColor <- undoColor
+    helloLabel.BackgroundColor <- undoColor.Color
 
   member __.OnBtnRedoClicked (sender:Object) (args:EventArgs) =
     let redoColor = postRedo()
-    helloLabel.BackgroundColor <- redoColor
+    helloLabel.BackgroundColor <- redoColor.Color
   
 
 type App() =

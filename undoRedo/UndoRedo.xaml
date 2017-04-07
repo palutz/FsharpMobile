@@ -13,7 +13,7 @@
 		</StackLayout>
 		<StackLayout Orientation="Horizontal">
 			<StackLayout>
-				<Button x:Name="btnUndo" Text="UNDO" Clicket="OnBtnUndoClicked" />
+				<Button x:Name="btnUndo" Text="UNDO" Clicked="OnBtnUndoClicked" />
 				<ListView x:Name="undoLV">
 					<ListView.ItemTemplate>
 						<DataTemplate>
@@ -23,7 +23,7 @@
 				</ListView>
 			</StackLayout>
 			<StackLayout>
-				<Button x:Name="btnRedo" Text="REDO" Clicket="OnBtnRedoClicked" />
+				<Button x:Name="btnRedo" Text="REDO" Clicked="OnBtnRedoClicked" />
 				<ListView x:Name="redoLV">
 					<ListView.ItemTemplate>
 						<DataTemplate>
