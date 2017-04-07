@@ -1,0 +1,13 @@
+source https://api.nuget.org/v3/index.json
+
+nuget FSharp.Core
+nuget Xamarin.Android.FSharp.ResourceProvider
+nuget Xamarin.Android.Support.Animated.Vector.Drawable
+nuget Xamarin.Android.Support.Design
+nuget Xamarin.Android.Support.v4
+nuget Xamarin.Android.Support.v7.AppCompat
+nuget Xamarin.Android.Support.v7.CardView
+nuget Xamarin.Android.Support.v7.MediaRouter
+nuget Xamarin.Android.Support.v7.RecyclerView
+nuget Xamarin.Android.Support.Vector.Drawable
+nuget Xamarin.Forms

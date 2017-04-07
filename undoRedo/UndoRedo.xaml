@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       x:Class="undoRedo.UndoRedoPage">
+
+	<StackLayout Padding="30,30,30,30">
+		<Label x:Name="helloLabel" Text="Hello!"/>
+		<StackLayout Orientation="Horizontal">
+			<Button x:Name="buttonRed" Text="Red" Clicked="OnButtonRedClicked"/> 
+      <Button x:Name="buttonFuchsia" Text="Fuchsia" Clicked="OnButtonFuchsiaClicked"/>  
+      <Button x:Name="buttonGreen" Text="Green" Clicked="OnButtonGreenClicked"/>  
+      <Button x:Name="buttonYellow" Text="Yellow" Clicked="OnButtonYellowClicked"/> 
+		</StackLayout>
+	</StackLayout>
+</ContentPage>

@@ -1,0 +1,6 @@
+﻿namespace undoRedo
+
+open Xamarin.Forms
+
+type App() =
+    inherit Application(MainPage = undoRedoPage())
