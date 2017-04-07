@@ -26,3 +26,19 @@ let hollywood =
 
 for actor in hollywood do
   actor.Post "I wanto to be a star"
+
+
+// add a response channel to the actor
+open System
+
+let recReply = 
+  MailboxProcessor<string * AsyncReplyChannel<string>>.Start(fun i ->
+    let rec inner () =    // recursive loop instead of while true
+      async {
+        let! msg, replyC = i.Receive()
+        replyC.Reply(String.Format("Got message!!! Message: {0}", msg))
+        do! inner ()
+      }
+    inner ())
+
+let msgAsync = recReply.PostAndReply(fun rc -> "Hello world async", rc)
