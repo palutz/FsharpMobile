@@ -11,5 +11,16 @@
       <Button x:Name="buttonGreen" Text="Green" Clicked="OnButtonGreenClicked"/>  
       <Button x:Name="buttonYellow" Text="Yellow" Clicked="OnButtonYellowClicked"/> 
 		</StackLayout>
+		<StackLayout Orientation="Horizontal">
+			<ListView x:Name="undoLV">
+				<ListView.ItemTemplate>
+					<DataTemplate>
+						<TextCell Text="{Binding Name}" TextColor="{Binding Color}" />
+					</DataTemplate>
+				</ListView.ItemTemplate>
+			</ListView>
+			<ListView x:Name="redoLV">
+			</ListView>
+		</StackLayout>
 	</StackLayout>
 </ContentPage>
