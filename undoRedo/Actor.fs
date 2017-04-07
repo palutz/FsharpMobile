@@ -1,13 +1,7 @@
 ﻿namespace undoRedo
 
-type UndoRedoMsg =
-  | Undo
-  | Redo
-  | Add of ColorInfo
 
 module Actor =
-  open System.Collections.ObjectModel
-
   let undoRedoActor = 
     MailboxProcessor<string>.Start(fun inbox ->
       let rec inner (undo: ObservableCollection<ColorInfo>) (redo: ObservableCollection<ColorInfo>) =
@@ -19,4 +13,7 @@ module Actor =
           | Undo -> ()
           return! inner undo redo 
         }
-      loop undo redo 
+      loop coreData.undoList coreData.redoList 
+
+  let postAdd colorInfo =
+    undoRedoActor.Post(Add colorInfo)

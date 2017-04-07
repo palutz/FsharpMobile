@@ -60,15 +60,16 @@
     <Resource Include="Toolkit.Content\ApplicationBar.Select.png">
       <Paket>True</Paket>
     </Resource>
-    <EmbeddedResource Include="undoRedoPage.xaml" />
     <Compile Include="undoRedoPage.xaml.fs">
       <DependentUpon>undoRedoPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Core.fs" />
     <Compile Include="AssemblyInfo.fs" />
     <Compile Include="Actor.fs" />
     <None Include="paket.references" />
     <Compile Include="UndoRedo.fs" />
     <EmbeddedResource Include="UndoRedo.xaml" />
+    <EmbeddedResource Include="undoRedoPage.xaml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\FSharp\Microsoft.Portable.FSharp.Targets" />
   <Choose>

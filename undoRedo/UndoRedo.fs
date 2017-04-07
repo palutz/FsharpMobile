@@ -6,13 +6,6 @@ open System
 open System.Collections.ObjectModel
 
 
-
-type ColorInfo = {
-  Name : string
-  Color: Color
-}
-
-
 type UndoRedoPage() =
   inherit ContentPage()
 
@@ -25,13 +18,11 @@ type UndoRedoPage() =
   let redoList = base.FindByName<ListView>("redoLV")
   let undoList = base.FindByName<ListView>("undoLV")
 
-  let undoL = new ObservableCollection<ColorInfo>()
-  let redoL = new ObservableCollection<ColorInfo>()
   do 
     // init items
     helloLabel.BackgroundColor <- Color.Red
-    redoList.ItemsSource <- redoL
-    undoList.ItemsSource <- undoL
+    redoList.ItemsSource <- coreData.redoList
+    undoList.ItemsSource <- coreData.undoList
   
   member __.OnButtonRedClicked (sender:Object) (args:EventArgs) =
     helloLabel.BackgroundColor <- Color.Red
