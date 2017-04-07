@@ -1,4 +1,4 @@
-﻿namespace undoRed
+﻿namespace undoRedo
 
 open Xamarin.Forms
 open System.Collections.ObjectModel
@@ -14,6 +14,6 @@ type UndoRedoMsg =
   | Add of ColorInfo
 
 
-module coreData =
-  let undoList = new ObservableCollection<ColorInfo>()
-  let redoList = new ObservableCollection<ColorInfo>()
+module CoreData =
+  let coreUndoList = new ObservableCollection<ColorInfo>()
+  let coreRedoList = new ObservableCollection<ColorInfo>()

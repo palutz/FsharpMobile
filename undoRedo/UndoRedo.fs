@@ -4,6 +4,8 @@ open Xamarin.Forms
 open Xamarin.Forms.Xaml
 open System
 open System.Collections.ObjectModel
+open CoreData
+open ActorM
 
 
 type UndoRedoPage() =
@@ -21,24 +23,24 @@ type UndoRedoPage() =
   do 
     // init items
     helloLabel.BackgroundColor <- Color.Red
-    redoList.ItemsSource <- coreData.redoList
-    undoList.ItemsSource <- coreData.undoList
+    redoList.ItemsSource <- coreRedoList
+    undoList.ItemsSource <- coreUndoList
   
   member __.OnButtonRedClicked (sender:Object) (args:EventArgs) =
     helloLabel.BackgroundColor <- Color.Red
-    undoL.Insert(0, { Name="Red"; Color=Color.Red })
+    postAdd { Name="Red"; Color=Color.Red }
   
   member __.OnButtonFuchsiaClicked (sender:Object) (args:EventArgs) =
     helloLabel.BackgroundColor <- Color.Fuchsia
-    undoL.Insert(0, { Name="Fuchsia"; Color=Color.Fuchsia })
+    postAdd { Name="Fuchsia"; Color=Color.Fuchsia }
 
   member __.OnButtonGreenClicked (sender:Object) (args:EventArgs) =
     helloLabel.BackgroundColor <- Color.Green
-    undoL.Insert(0, { Name="Green"; Color=Color.Green })
+    postAdd {  Name="Green"; Color=Color.Green }
 
   member __.OnButtonYellowClicked (sender:Object) (args:EventArgs) =
     helloLabel.BackgroundColor <- Color.Yellow
-    undoL.Insert(0, { Name="Yellow"; Color=Color.Yellow })
+    postAdd {  Name="Yellow"; Color=Color.Yellow }
   
 
 type App() =
