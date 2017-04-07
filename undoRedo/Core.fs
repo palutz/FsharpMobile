@@ -9,8 +9,8 @@ type ColorInfo = {
 }
 
 type UndoRedoMsg =
-  | Undo
-  | Redo
+  | Undo of AsyncReplyChannel<ColorInfo>
+  | Redo of AsyncReplyChannel<ColorInfo>
   | Add of ColorInfo
 
 
